@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;700;800;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+:root{
+    --headerColor: rgb(132, 201, 217);
+    --navColor:rgb(217, 202, 189);
+    --mainColor: rgb(216, 189, 165);
+    --sideMenuColor: rgb(217, 202, 189);
+    --adColor: rgb(143, 105, 71);
+    --footerColor: rgb(90, 163, 179);
+}
+
+/*Grid Layout Version #1*/
+
+.gridContainer {height: 100vh; display: grid; grid-template-columns: repeat(12, 1fr); grid-template-rows: repeat(12, 1fr); gap: 3px; font-size: 2.5rem;}
+.Header {grid-row: 1 / span 1; grid-column: 1 / span 12;}
+.Navigation {grid-row: 2 / span 1; grid-column: 1 / span 12;}
+.Main {grid-row: 3 / span 9; grid-column: 3 / span 8;}
+.sideMenu {grid-row: 3 / span 9; grid-column: 1 / span 2;}
+.Footer {grid-row: 12 / span 1; grid-column: 1 / span 12;}
+.Advertisement {grid-row: 3 / span 9; grid-column: 11 / span 2;}
+
+@media (max-width: 1200px) {
+    .gridContainer {font-size: 2rem;}
+    .Header {grid-row: 1 / span 1; grid-column: 1 / span 12;}
+    .Navigation {grid-row: 2 / span 1; grid-column: 1 / span 12;}
+    .Main {grid-row: 3 / span 9; grid-column: 3 / span 10;}
+    .sideMenu {grid-row: 3 / span 9; grid-column: 1 / span 2;}
+    .Footer {grid-row: 12 / span 1; grid-column: 3 / span 10;}
+    .Advertisement {grid-row: 12 / span 1; grid-column: 1 / span 2;}
+}
+
+@media (max-width: 600px) {
+    .gridContainer {font-size: 1.25rem;}
+    .Header {grid-row: 1 / span 1; grid-column: 1 / span 12;}
+    .Navigation {grid-row: 2 / span 1; grid-column: 1 / span 12;}
+    .Main {grid-row: 4 / span 7; grid-column: 1 / span 12;}
+    .sideMenu {grid-row: 3 / span 1; grid-column: 10 / span 3;}
+    .sideMenu:active {grid-row: 3 / span 1; grid-column: 1 / span 12; transition: ease-in-out 3s;}
+    .Footer {grid-row: 12 / span 1; grid-column: 1 / span 12;}
+    .Advertisement {grid-row: 11 / span 1; grid-column: 1 / span 12;}
+}
+
+/*Styling*/
+
+.gridContainer {
+    background: black;
+}
+
+.Header:hover, 
+.Navigation:hover, 
+.Main:hover, 
+.sideMenu:hover, 
+.Advertisement:hover, 
+.Footer:hover {
+    filter: brightness(85%);;
+}
+
+.Header {background: var(--headerColor);}
+.Navigation {background: var(--navColor);}
+.Main {background: var(--mainColor);}
+.sideMenu {background: var(--sideMenuColor);}
+.Advertisement {background:var(--adColor);}
+.Footer {background: var(--footerColor);}
+
+
+.el {
+    border: 2px solid lightgrey;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
